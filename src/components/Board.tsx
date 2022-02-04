@@ -22,10 +22,10 @@ const ReturnDiv = styled.div`
 const Wrapper = styled.div<IWrapperProps>`
   background-color: ${(props) =>
     props.isDraggingOver
-      ? "blue"
+      ? props.theme.bgColor
       : props.draggingFromThisWith
-      ? "pink"
-      : "red"};
+      ? props.theme.boardColor
+      : props.theme.bgColor};
   flex-grow: 1;
   padding: 10px 10px;
   transition: background-color 0.1s linear;

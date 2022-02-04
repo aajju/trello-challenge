@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
 import { ITodoListState, todoListState } from "../atoms";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 
 const Wrapper = styled.form`
   display: flex;
@@ -16,13 +16,13 @@ const Wrapper = styled.form`
 `;
 
 function CreateBoard() {
-  const [todoList, setTodoList] = useRecoilState(todoListState);
+  const setTodoList = useSetRecoilState(todoListState);
 
   const {
     register,
     handleSubmit,
     setValue,
-    formState: { errors },
+    // formState: { errors },
   } = useForm<ITodoListState>();
 
   const onSubmit = ({ data }: any) => {
